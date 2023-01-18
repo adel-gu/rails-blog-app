@@ -4,12 +4,14 @@ class Post < ApplicationRecord
   has_many :likes
   after_save :update_posts_counter
 
+  validates :title, presence: true
+
   def update_posts_counter
     User.find(self.author_id).increment!(:posts_counter)
   end
 
   # A method which returns the 5 most recent comments for a given post.
   def recent_five_comments
-    Comment.where(post_id: id).order(updated_at: :desc).limit(5)
+    Comment.where(post_id: self.id).order(updated_at: :desc).limit(5)
   end
 end
