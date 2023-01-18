@@ -15,7 +15,6 @@ RSpec.describe Like, type: :model do
   context "testing likes_counter for a saved post" do
     before { subject.save }
     it "should be 1" do
-      puts "heeeeeeeeeeeeere #{Post.find(post.id).likes_counter}"
       expect(Post.find(post.id).likes_counter).to be 1
     end
   end
