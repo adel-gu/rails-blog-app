@@ -6,7 +6,7 @@ class Post < ApplicationRecord
   after_initialize :set_comments_and_likes_counters
 
   validates :title, presence: true, length: { maximum: 250 }
-  validates :comments_counter, numericality: true, comparison: { greater_than_or_equal_to: 0 }
+  validates :comments_counter, :likes_counter, numericality: true, comparison: { greater_than_or_equal_to: 0 }
 
   def update_posts_counter
     User.find(self.author_id).increment!(:posts_counter)
