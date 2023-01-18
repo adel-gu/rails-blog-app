@@ -5,7 +5,7 @@ class User < ApplicationRecord
   after_initialize :set_posts_counter_default
 
   validates :name, presence: true
-  validates :posts_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  validates :posts_counter, numericality: true, comparison: { greater_than_or_equal_to: 0 }
 
   def recent_three_posts
     Post.where(author: self).order(updated_at: :desc).limit(3)

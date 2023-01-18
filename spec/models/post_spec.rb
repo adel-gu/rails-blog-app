@@ -28,5 +28,9 @@ RSpec.describe Post, type: :model do
       subject.comments_counter = -10
       expect(subject).to_not be_valid
     end
+
+    it "for comments_counters should be valid for non negative values" do
+      expect(subject).to be_valid
+    end
   end
 end
