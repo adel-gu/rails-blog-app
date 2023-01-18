@@ -24,12 +24,21 @@ RSpec.describe Post, type: :model do
       expect(subject).to_not be_valid
     end
 
-    it "for comments_counters should be invalid for negative values" do
+    it "for comments_counter should be invalid for negative values" do
       subject.comments_counter = -10
       expect(subject).to_not be_valid
     end
 
-    it "for comments_counters should be valid for non negative values" do
+    it "for comments_counter should be valid for non negative values" do
+      expect(subject).to be_valid
+    end
+
+    it "for likes_counter should be invalid for negative values" do
+      subject.likes_counter = -10
+      expect(subject).to_not be_valid
+    end
+
+    it "for likes_counter should be valid for non negative values" do
       expect(subject).to be_valid
     end
   end
