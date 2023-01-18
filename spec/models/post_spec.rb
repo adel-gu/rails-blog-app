@@ -10,5 +10,18 @@ RSpec.describe Post, type: :model do
       subject.title = nil
       expect(subject).to_not be_valid
     end
+
+    it "for title should be valid with a valid value" do
+      expect(subject).to be_valid
+    end
+
+    it "for title should be valid for not exceeding 250 characters" do
+      expect(subject).to be_valid
+    end
+
+    it "for title should be invalid for exceeding 250 characters" do
+      subject.title = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec."
+      expect(subject).to_not be_valid
+    end
   end
 end
