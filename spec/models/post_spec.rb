@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  subject { Post.new(author: User.new(name: "author"), title: 'Hello', text: 'This is my first post') }
+  user = User.create(name: "author")
+  subject { Post.new(author: user, title: 'Hello', text: 'This is my first post') }
 
   before { subject.save }
 
@@ -42,4 +43,21 @@ RSpec.describe Post, type: :model do
       expect(subject).to be_valid
     end
   end
+
+  context "When testing update_posts_counter" do
+    before { subject.save }
+
+    it "should increment posts_counter in user" do
+      expect(User.find(user.id).posts_counter).to_not eq 0
+    end
+  end
+
+  context "When testing recent_five_comments" do
+    before { 10.times { Comment.create(post: subject, author: user, text: 'Hi Tom!' ) } }
+
+    it "recent_five_comments should return array of length 5" do
+      expect(subject.recent_five_comments.length).to eq 5
+    end
+  end
+
 end
