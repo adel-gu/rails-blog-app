@@ -12,7 +12,8 @@ class User < ApplicationRecord
   end
 
   private
+
   def set_posts_counter_default
-    self.posts_counter = 0 unless self.posts_counter
+    self.posts_counter = 0 unless posts_counter
   end
 end
