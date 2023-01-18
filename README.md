@@ -35,7 +35,7 @@ After you're finished please remove all the comments and instructions!
   - [Prerequisites](#prerequisites)
   - [Install](#install)
   - [Usage](#usage)
-  <!-- - [Run tests](#run-tests) -->
+  - [Run tests](#run-tests)
   <!-- - [Deployment](#triangular_flag_on_post-deployment) -->
 - [👥 Authors](#authors)
 <!-- - [🔭 Future Features](#future-features) -->
@@ -126,7 +126,6 @@ Example commands:
   cd my-folder
   git clone https://github.com/adel-gu/rails-blog-app.git
 ```
--
 
 ### Install
 
@@ -136,10 +135,9 @@ Install this project with:
 Example command:
 
 ```sh
-  cd my-project/rails-blog-app
+  cd rails-blog-app/
   bundle install
 ```
--
 
 ### Usage
 
@@ -152,17 +150,16 @@ Example command:
   rails server
 ```
 
-<!-- ### Run tests
+### Run tests
 
 To run tests, run the following command:
 
-<!--
 Example command:
 
 ```sh
-  bin/rails test test/models/article_test.rb
+  gem install rails rspec
+  rails spec spec/models/
 ```
---->
 <!--
 ### Deployment
 
