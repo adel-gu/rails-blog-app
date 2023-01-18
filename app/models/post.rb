@@ -5,7 +5,7 @@ class Post < ApplicationRecord
   after_save :update_posts_counter
 
   def update_posts_counter
-    User.find(user_id).increment!(:posts_counter)
+    User.find(self.author_id).increment!(:posts_counter)
   end
 
   # A method which returns the 5 most recent comments for a given post.
