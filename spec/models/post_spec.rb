@@ -23,5 +23,10 @@ RSpec.describe Post, type: :model do
       subject.title = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec."
       expect(subject).to_not be_valid
     end
+
+    it "for comments_counters should be invalid for negative values" do
+      subject.comments_counter = -10
+      expect(subject).to_not be_valid
+    end
   end
 end
