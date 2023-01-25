@@ -20,5 +20,6 @@
       </div>
     </div>
   <% end %>
-  <a href="/users/<%= @user.id %>/posts" class="btn btn-secondary stretched-link d-block mt-3 mx-auto" style="width: 10em">See all posts</a>
+  <%= link_to 'See all posts', user_posts_path(@user), class: "btn btn-secondary stretched-link d-block mt-3 mx-auto", style: "width: 10em" %>
+
 </section>
