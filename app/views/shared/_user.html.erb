@@ -5,9 +5,9 @@
       </div>
       <div class="col-md-8">
         <div class="card-body d-flex flex-column">
-          <a href="users/<%= user.id %>">
-            <h1 class="card-title"><%= user.name %></h1>
-          </a>
+          <h1 class="card-title">
+            <%= link_to user.name, user %>
+          </h1>
           <p class="card-text ms-auto"><small class="text-muted">Number of posts: <%= user.posts_counter %></small></p>
         </div>
       </div>
