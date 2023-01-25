@@ -8,14 +8,17 @@
   </div>
 <section>
 <section>
-  <div class="card">
-    <div class="card-header">
-      Post #<%=  %>
+  <% for post in @user.recent_three_posts do %>
+    <div class="card mt-3">
+      <div class="card-header">
+        Post #<%= post.id %>
+      </div>
+      <div class="card-body d-flex flex-column">
+        <h5 class="card-title"><%= post.title %></h5>
+        <p class="card-text"><%= post.text %></p>
+        <p class="card-text ms-auto"><small class="text-muted">Comments: <%= post.comments_counter %> </small> <small class="text-muted">Likes: <%= post.likes_counter %></small></p>
+      </div>
     </div>
-    <div class="card-body">
-      <h5 class="card-title">Special title treatment</h5>
-      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
+  <% end %>
+  <a href="/users/<%= @user.id %>/posts" class="btn btn-secondary stretched-link d-block mt-3 mx-auto" style="width: 10em">See all posts</a>
 </section>
