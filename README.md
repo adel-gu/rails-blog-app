@@ -185,6 +185,11 @@ Example:
 - Twitter: [@GuitounAdel](https://twitter.com/GuitounAdel)
 - LinkedIn: [adelguitoun](https://linkedin.com/in/adelguitoun)
 
+👤 **Florin Voicu**
+
+- GitHub: [@vflorin1995](https://github.com/vflorin1995)
+- LinkedIn: [@florin--voicu](https://linkedin.com/in/florin--voicu)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
