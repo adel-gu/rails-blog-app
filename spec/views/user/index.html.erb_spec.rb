@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'user/index.html.erb', type: :system do
-  subject { User.new(name: 'test', photo: "http://google.com", bio: "Programmer") }
+  subject { User.new(name: 'test', photo: 'http://google.com', bio: 'Programmer') }
   before { subject.save }
 
   describe 'index page' do
