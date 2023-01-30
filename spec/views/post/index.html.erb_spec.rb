@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'post/show.html.erb', type: :system do
+RSpec.describe 'post/index.html.erb', type: :system do
   subject { User.new(name: 'test', photo: "http://google.com", bio: "Programmer") }
   before{ subject.save }
 
