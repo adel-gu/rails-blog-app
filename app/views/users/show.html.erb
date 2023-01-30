@@ -9,5 +9,7 @@
 <section>
 <section>
   <%= render partial: 'shared/post', collection: @user.recent_three_posts %>
-  <%= link_to 'See all posts', user_posts_path(@user), class: "btn btn-secondary stretched-link d-block mt-3 mx-auto", style: "width: 10em" %>
+  <button>
+    <%= link_to 'See all posts', "/users/#{@user.id}/posts" %>
+  </button>
 </section>

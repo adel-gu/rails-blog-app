@@ -2,7 +2,7 @@
   <div class="card">
     <div class="card-body">
       <div class="d-flex">
-        <h5 class="card-title">Post #<%= @post.id %> by <%= @post.author.name %></h5>
+        <h5 class="card-title"><%= @post.title %> by <%= @post.author.name %></h5>
         <p class="card-text ms-auto"><small class="text-muted">Comments: <%= @post.comments_counter %> </small> <small class="text-muted">Likes: <%= @post.likes_counter %></small></p>
       </div>
       <p class="card-text"><%= @post.text %></p>

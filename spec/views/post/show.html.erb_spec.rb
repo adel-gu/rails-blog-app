@@ -24,7 +24,7 @@ RSpec.describe 'post/show.html.erb', type: :system do
       expect(page).to have_content('This is my first post')
       post.comments.each do |comment|
         expect(page).to have_content(comment.text)
-        expect(page).to have_content(comment.user.name)
+        expect(page).to have_content(comment.author.name)
       end
     end
   end
