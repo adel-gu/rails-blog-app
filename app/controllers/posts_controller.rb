@@ -30,4 +30,9 @@ class PostsController < ApplicationController
       end
     end
   end
+
+  def destroy
+    Post.delete(params[:id])
+    redirect_to user_posts_path(params[:user_id])
+  end
 end

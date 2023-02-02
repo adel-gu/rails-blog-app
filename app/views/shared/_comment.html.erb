@@ -1,2 +1,4 @@
 <p><strong><%= comment.author.name %>:</strong> <%= comment.text %></p>
-
+<% if can? :destroy, comment %>
+  <%= button_to "Delete comment", user_post_comment_path(comment.author, comment.post, comment), method: :delete, data: { turbo: false } %>
+<% end %>
